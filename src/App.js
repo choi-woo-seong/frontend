@@ -19,6 +19,7 @@ import RegisterPage from "./pages/RegisterPage"
 import FacilityDetailPage from "./pages/FacilityDetailPage"
 import FacilityListPage from "./pages/FacilityListPage"
 import FavoritesPage from "./pages/FavoritesPage"
+import FindAccountPage from "./pages/FindAccountPage"
 
 // 컨텍스트 import
 import { AuthProvider } from "./contexts/AuthContext"
@@ -73,6 +74,7 @@ function App() {
             <Route path="/facility/:facilityId" element={<FacilityDetailPage />} />
             <Route path="/facilities/:facilityType" element={<FacilityListPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/find-account" element={<FindAccountPage />} />
           </Routes>
         </div>
       </FavoritesProvider>
