@@ -1,0 +1,137 @@
+/**
+ * 챗봇 버튼 컴포넌트 스타일
+ */
+
+.chatbot-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+}
+
+.chatbot-button {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: #758e67;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-button:hover {
+  background-color: #5f7354;
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 0;
+  width: 20rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.chatbot-header {
+  background-color: #758e67;
+  color: white;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.chatbot-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chatbot-message {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.chatbot-message.bot {
+  background-color: #e8f5e9;
+  align-self: flex-start;
+}
+
+.chatbot-message.user {
+  background-color: #e3f2fd;
+  align-self: flex-end;
+}
+
+.chatbot-input-form {
+  display: flex;
+  padding: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.chatbot-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem 0 0 0.25rem;
+  outline: none;
+}
+
+.chatbot-send-btn {
+  background-color: #758e67;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-send-btn:hover {
+  background-color: #5f7354;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 576px) {
+  .chatbot-window {
+    width: 18rem;
+    right: -0.5rem;
+  }
+}

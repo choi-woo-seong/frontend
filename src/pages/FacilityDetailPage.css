@@ -1,0 +1,288 @@
+/**
+ * 시설 상세 페이지 스타일
+ */
+
+.facility-detail-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #758e67;
+}
+
+.facility-detail-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* 헤더 이미지 */
+.facility-header-image {
+  position: relative;
+  height: 400px;
+}
+
+.facility-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+
+.facility-header-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+}
+
+.facility-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.facility-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.facility-header-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.favorite-button,
+.share-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-button:hover,
+.share-button:hover {
+  background-color: white;
+}
+
+.favorite-button.active {
+  color: #e53e3e;
+}
+
+/* 기본 정보 섹션 */
+.facility-info-section {
+  padding: 2rem;
+}
+
+.facility-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.facility-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.type-tag {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.price-tag {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.facility-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.facility-contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-item svg {
+  color: #758e67;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.contact-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.contact-item p {
+  color: #666;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.facility-amenities {
+  margin-bottom: 1rem;
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amenity-tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* 탭 콘텐츠 */
+.facility-tabs {
+  border-top: 1px solid #eee;
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  color: #758e67;
+  border-bottom: 2px solid #758e67;
+  font-weight: 600;
+}
+
+.tabs-content {
+  padding: 2rem;
+}
+
+/* 객실 정보 탭 */
+.rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.room-card {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 33.333%;
+  height: 200px;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-info {
+  width: 66.667%;
+  padding: 1.5rem;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.room-type {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.room-price {
+  color: #758e67;
+  font-weight: 600;
+}
+
+.room-size {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.room-features-title {
+}

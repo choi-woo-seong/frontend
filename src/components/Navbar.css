@@ -1,0 +1,121 @@
+/**
+ * 네비게이션 바 컴포넌트 스타일
+ */
+
+.navbar {
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-right: 1.5rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: #4a5568;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #758e67;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favorites-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.favorites-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #758e67;
+  color: white;
+  font-size: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  margin-left: 0.25rem;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-username {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.navbar-logout-btn {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #e53e3e;
+  border-radius: 0.25rem;
+  color: #e53e3e;
+  background-color: transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-logout-btn:hover {
+  background-color: rgba(229, 62, 62, 0.1);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-left {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-links {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-links {
+    display: none;
+  }
+}

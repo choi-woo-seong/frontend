@@ -1,0 +1,211 @@
+/**
+ * 회원가입 페이지 컴포넌트 스타일
+ */
+
+.register-page {
+  min-height: 100vh;
+  background-color: #f7fafc;
+}
+
+.register-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.register-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.register-header {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.register-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.register-subtitle {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.register-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.error-message:before {
+  content: "!";
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.register-form {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.required {
+  color: #e53e3e;
+  margin-left: 0.25rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #758e67;
+}
+
+.form-input.verified {
+  background-color: #f0fff4;
+  border-color: #68d391;
+}
+
+.field-error {
+  color: #e53e3e;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.input-with-button {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-with-button .form-input {
+  flex: 1;
+}
+
+.verification-button {
+  padding: 0 1rem;
+  background-color: #758e67;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.verification-button:hover:not(:disabled) {
+  background-color: #5f7354;
+}
+
+.verification-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.verification-note {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-top: 0.25rem;
+}
+
+.checkbox-group {
+  margin-top: 1.5rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox {
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.checkbox-label {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.terms-link {
+  color: #758e67;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #758e67;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.register-button:hover:not(:disabled) {
+  background-color: #5f7354;
+}
+
+.register-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.register-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+.login-text {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.login-link {
+  color: #758e67;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

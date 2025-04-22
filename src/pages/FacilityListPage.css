@@ -1,0 +1,105 @@
+/**
+ * 시설 목록 페이지 컴포넌트 스타일
+ */
+
+.facility-list-page {
+  min-height: 100vh;
+}
+
+/* 검색 섹션 */
+.search-section {
+  background-color: #f7fafc;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+  text-align: center;
+}
+
+.search-bar-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 결과 섹션 */
+.results-section {
+  padding: 2rem 0;
+}
+
+.filter-panel {
+  margin-bottom: 1.5rem;
+}
+
+.map-container {
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.result-count {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #718096;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.125rem;
+  color: #718096;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 0;
+  color: #718096;
+}
+
+.reset-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #758e67;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #5f7354;
+}
+
+/* 반응형 스타일 */
+@media (min-width: 768px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .facilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

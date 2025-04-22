@@ -1,0 +1,85 @@
+/**
+ * 검색 바 컴포넌트 스타일
+ */
+
+.search-bar {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.search-tabs {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.search-tab {
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  background-color: #f7fafc;
+  color: #4a5568;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-tab.active {
+  background-color: #ffffff;
+  color: #758e67;
+  border-bottom: 2px solid #758e67;
+}
+
+.search-form {
+  display: flex;
+  padding: 0.75rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #758e67;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #5f7354;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 576px) {
+  .search-tab {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .search-input {
+    font-size: 0.875rem;
+  }
+
+  .search-button {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,161 @@
+/**
+ * 카카오맵 API 키 설정 컴포넌트 스타일
+ */
+
+.map-api-key-setup {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.setup-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.setup-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.setup-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.setup-description {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.setup-content {
+  padding: 1.5rem;
+}
+
+.setup-alert {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.setup-alert.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.setup-alert.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+.setup-alert.error .alert-icon {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.setup-alert.success .alert-icon {
+  background-color: #38a169;
+  color: white;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.setup-alert.error .alert-title {
+  color: #721c24;
+}
+
+.setup-alert.success .alert-title {
+  color: #155724;
+}
+
+.alert-description {
+  font-size: 0.875rem;
+}
+
+.setup-alert.error .alert-description {
+  color: #721c24;
+}
+
+.setup-alert.success .alert-description {
+  color: #155724;
+}
+
+.setup-form {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #758e67;
+}
+
+.setup-instructions {
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+.instructions-text {
+  margin-bottom: 0.75rem;
+  color: #4a5568;
+}
+
+.instructions-list {
+  padding-left: 1.25rem;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.instructions-list li {
+  margin-bottom: 0.5rem;
+}
+
+.setup-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  text-align\

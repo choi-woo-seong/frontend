@@ -1,0 +1,17 @@
+/**
+ * 이미지 폴백 처리 컴포넌트 스타일
+ */
+
+.image-with-fallback {
+  display: block;
+  object-fit: cover;
+}
+
+.image-with-fallback.error {
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
