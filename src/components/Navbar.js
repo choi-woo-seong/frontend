@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext"
 import { useFavorites } from "../contexts/FavoritesContext"
 import "./Navbar.css"
+import logo from '../logo/logo.png'
 
 /**
  * 네비게이션 바 컴포넌트
@@ -34,9 +35,9 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <Link to="/" className="navbar-logo">
-            모서요
-          </Link>
+            <Link to="/" className="navbar-logo">
+             <img src={logo} alt="로고" className="logo-image" />
+            </Link>
           <div className="navbar-links">
             <Link to="/facilities/silver-town" className="navbar-link">
               실버타운

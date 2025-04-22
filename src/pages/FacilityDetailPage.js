@@ -280,7 +280,7 @@ function FacilityDetailPage() {
       {/* 뒤로 가기 버튼 */}
       <div className="container">
         <button className="back-button" onClick={handleGoBack}>
-          ← 뒤로 가기
+        ⭠ 뒤로 가기
         </button>
       </div>
 
@@ -567,32 +567,32 @@ function FacilityDetailPage() {
           </div>
         </div>
 
-        {/* 추천 시설 */}
-        <div className="recommended-facilities">
-          <h2 className="section-title">비슷한 시설</h2>
-          <div className="recommended-list">
-            {/* 추천 시설 목록 (실제 구현 시 API에서 가져옴) */}
-            {[1, 2, 3].map((id) => (
-              <Link to={`/facility/${id}`} key={id} className="recommended-card">
-                <div className="recommended-image">
-                  <ImageWithFallback
-                    src={`/facility-${id}.jpg`}
-                    alt={`추천 시설 ${id}`}
-                    fallbackSrc="/placeholder.jpg"
-                  />
-                </div>
-                <div className="recommended-info">
-                  <h3 className="recommended-title">추천 시설 {id}</h3>
-                  <div className="recommended-tags">
-                    <span className="recommended-tag">실버타운</span>
-                  </div>
-                  <p className="recommended-location">서울시 강남구</p>
-                  <p className="recommended-price">월 150만원~</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+       {/* 추천 시설 */}
+<div className="detail-recommended-facilities">
+  <h2 className="detail-section-title">비슷한 시설</h2>
+  <div className="detail-recommended-list">
+    {[1, 2, 3].map((id) => (
+      <Link to={`/facility/${id}`} key={id} className="detail-recommended-card">
+        <div className="detail-recommended-image">
+          <ImageWithFallback
+            src={`/facility-${id}.jpg`}
+            alt={`추천 시설 ${id}`}
+            fallbackSrc="/placeholder.jpg"
+          />
         </div>
+        <div className="detail-recommended-info">
+          <h3 className="detail-recommended-title">추천 시설 {id}</h3>
+          <div className="detail-recommended-tags">
+            <span className="detail-recommended-tag">실버타운</span>
+          </div>
+          <p className="detail-recommended-location">서울시 강남구</p>
+          <p className="detail-recommended-price">월 150만원~</p>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
       </div>
 
       {/* 챗봇 버튼 */}
