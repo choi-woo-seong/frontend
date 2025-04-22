@@ -8,52 +8,31 @@
  * @version 1.0
  */
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import SearchBar from "../components/SearchBar"
 import FacilityTypeButtons from "../components/FacilityTypeButtons"
 import ChatbotButton from "../components/ChatbotButton"
 import "./HomePage.css"
 
-/**
- * 홈페이지 컴포넌트
- * @returns {JSX.Element} 홈페이지 컴포넌트
- */
 function HomePage() {
-  // 추천 시설 상태 관리
   const [recommendedFacilities, setRecommendedFacilities] = useState([])
-  // 복지 뉴스 상태 관리
   const [welfareNews, setWelfareNews] = useState([])
-  // 정부 프로그램 상태 관리
   const [governmentPrograms, setGovernmentPrograms] = useState([])
-  // 공지사항 상태 관리
   const [announcements, setAnnouncements] = useState([])
-  // 로딩 상태 관리
   const [loading, setLoading] = useState(true)
+  const [selectedCategory, setSelectedCategory] = useState("전체")
 
-  // 컴포넌트 마운트 시 데이터 로드
+  const navigate = useNavigate()
+
+  const filteredFacilities =
+    selectedCategory === "전체"
+      ? recommendedFacilities
+      : recommendedFacilities.filter((f) => f.type.includes(selectedCategory))
+
   useEffect(() => {
-    // 데이터 로드 함수
     const loadData = async () => {
       try {
-        /**
-         * 백엔드 연동 포인트:
-         * 홈페이지에 필요한 데이터를 API에서 가져옵니다.
-         *
-         * 예시:
-         * const [facilitiesRes, newsRes, programsRes, announcementsRes] = await Promise.all([
-         *   axios.get('/api/facilities/recommended'),
-         *   axios.get('/api/news/welfare'),
-         *   axios.get('/api/programs/government'),
-         *   axios.get('/api/announcements')
-         * ]);
-         *
-         * setRecommendedFacilities(facilitiesRes.data);
-         * setWelfareNews(newsRes.data);
-         * setGovernmentPrograms(programsRes.data);
-         * setAnnouncements(announcementsRes.data);
-         */
-
-        // 임시 데이터 (백엔드 연동 전)
         setRecommendedFacilities([
           {
             id: 1,
@@ -101,15 +80,13 @@ function HomePage() {
             id: 1,
             title: "노인 장기 요양 보험",
             organization: "국민건강보험공단",
-            summary:
-              "65세 이상 노인 또는 65세 미만의 노인성 질병이 있는 자를 대상으로 신체활동 및 가사활동 지원 등의 서비스를 제공하는 사회보험제도",
+            summary: "65세 이상 노인 또는 노인성 질병이 있는 자를 대상으로 지원하는 제도",
           },
           {
             id: 2,
             title: "노인 맞춤 돌봄 서비스",
             organization: "보건복지부",
-            summary:
-              "일상생활 영위가 어려운 취약노인에게 적절한 돌봄 서비스를 제공하여 안정적인 노후생활 보장, 노인의 기능·건강 유지 및 악화 예방",
+            summary: "일상생활이 어려운 노인에게 돌봄 서비스를 제공하는 정부 프로그램",
           },
         ])
 
@@ -153,7 +130,7 @@ function HomePage() {
       {/* 시설 유형 섹션 */}
       <section className="section facility-types-section">
         <div className="container">
-          <h2 className="section-title">시간과 장애 부서없애 다양 사이트 소개글</h2>
+          <h2 className="section-title">시설 유형 선택</h2>
           <FacilityTypeButtons />
         </div>
       </section>
@@ -163,14 +140,31 @@ function HomePage() {
         <div className="container">
           <h2 className="section-title">맞춤 추천 시설</h2>
 
+          <div className="category-tabs">
+            {["전체", "실버타운", "요양원", "양로원"].map((category) => (
+              <button
+                key={category}
+                className={`category-tab ${selectedCategory === category ? "active" : ""}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
           {loading ? (
             <div className="loading-indicator">시설 정보를 불러오는 중...</div>
           ) : (
             <div className="recommended-facilities">
-              {recommendedFacilities.map((facility) => (
+              {filteredFacilities.map((facility) => (
                 <div key={facility.id} className="facility-card">
                   <div className="facility-image">
-                    <img src={facility.image || "/placeholder.svg"} alt={facility.title} />
+                    <img
+                      src={facility.image || "/placeholder.svg"}
+                      alt={facility.title}
+                      onClick={() => navigate(`/facility/${facility.id}`)}
+                      style={{ cursor: "pointer" }}
+                    />
                   </div>
                   <div className="facility-info">
                     <h3 className="facility-title">{facility.title}</h3>
@@ -219,9 +213,7 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <a href="/welfare-news" className="info-link">
-                더보기
-              </a>
+              <a href="/welfare-news" className="info-link">더보기</a>
             </div>
 
             {/* 정부 프로그램 */}
@@ -236,9 +228,7 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <a href="/government-programs" className="info-link">
-                더보기
-              </a>
+              <a href="/government-programs" className="info-link">더보기</a>
             </div>
 
             {/* 공지사항 */}
@@ -252,12 +242,10 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <a href="/notices" className="info-link">
-                더보기
-              </a>
+              <a href="/notices" className="info-link">더보기</a>
             </div>
 
-            {/* 광고·제휴 */}
+            {/* 광고 · 제휴 */}
             <div className="info-card">
               <h3 className="info-title">광고·제휴</h3>
               <div className="info-content">
@@ -274,9 +262,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-              <a href="/ad-inquiry" className="info-link">
-                더보기
-              </a>
+              <a href="/ad-inquiry" className="info-link">더보기</a>
             </div>
           </div>
         </div>
